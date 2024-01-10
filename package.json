@@ -5,8 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "start-server": "node app.js"
+    "start": "NODE_ENV=production STRIPE_KEY=sk_test_51OTfCNSEy4tLfYmQWz6H9nVoukPTpjjjzZpXkrjZZkGwvrKD88sKVpHBUlXfrSKqJ7x6SiPbF0EHM9zmi0DnodZA00Hz4XhQvH node app.js",
+    "start-server": "node app.js",
+    "start:dev": "nodemon app.js"
   },
   "author": "Maximilian Schwarzmüller",
   "license": "ISC",
@@ -14,12 +15,24 @@
     "nodemon": "^1.18.3"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "csurf": "^1.11.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "mongodb": "^3.1.6",
+    "mongoose": "^5.2.17",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^1.6.1",
+    "nodemailer": "^6.9.7",
+    "pdfkit": "^0.14.0",
     "pug": "^2.0.3",
-    "sequelize": "^5.0.0-beta.11"
+    "sequelize": "^5.0.0-beta.11",
+    "stripe": "^14.10.0"
   }
 }

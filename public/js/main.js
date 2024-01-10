@@ -7,10 +7,14 @@ function backdropClickHandler() {
   sideDrawer.classList.remove('open');
 }
 
-function menuToggleClickHandler() {
+function menuToggleClickHandler() { 
   backdrop.style.display = 'block';
   sideDrawer.classList.add('open');
 }
 
 backdrop.addEventListener('click', backdropClickHandler);
 menuToggle.addEventListener('click', menuToggleClickHandler);
+
+
+
+// *huZw?(EdPE:2Dhy

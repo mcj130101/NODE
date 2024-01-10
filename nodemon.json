@@ -1,0 +1,9 @@
+{
+  "env": {
+    "MONGODB_URI" : "mongodb+srv://mj:yS7SpeGty1cNTYRD@cluster1.fosgntc.mongodb.net/?retryWrites=true&w=majority",
+    "MONGO_USER": "mj",
+    "MONGO_USER_PASS": "yS7SpeGty1cNTYRD",
+    "MONGO_DEFAULT_STORE": "shop",
+    "STRIPE_KEY": "sk_test_51OTfCNSEy4tLfYmQWz6H9nVoukPTpjjjzZpXkrjZZkGwvrKD88sKVpHBUlXfrSKqJ7x6SiPbF0EHM9zmi0DnodZA00Hz4XhQvH"
+  }
+}
