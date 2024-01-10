@@ -8,6 +8,7 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 const csrf = require("csurf");
 const flash = require("connect-flash");
 const multer = require("multer");
+const helmet = require("helmet");
 
 const errorController = require("./controllers/error");
 const User = require("./models/user");
@@ -50,6 +51,7 @@ const shopRoutes = require("./routes/shop");
 const authRoutes = require("./routes/auth");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(helmet());
 app.use(
   multer({
     dest: "images",
@@ -58,7 +60,7 @@ app.use(
   }).single("image")
 );
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/images', express.static(path.join(__dirname, "images")));
+app.use("/images", express.static(path.join(__dirname, "images")));
 app.use(
   session({
     secret: "my secret",
@@ -97,7 +99,7 @@ app.use(errorController.get404);
 app.use((error, req, res, next) => {
   // res.status(error.httpStatusCode).render(...);
   // res.redirect('/500');
-  console.log(error)
+  console.log(error);
   res.status(500).render("500", {
     pageTitle: "Error!",
     path: "/500",
@@ -108,7 +110,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
   .then((result) => {
     app.listen(process.env.PORT || 3000);
